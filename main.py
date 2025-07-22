@@ -2,11 +2,12 @@
 
 import os
 from criar_crachas import gerar_crachas
+from preparar_impressao import preparar_impressao
 
 def main():
     """
     Função principal que define os caminhos dos arquivos de entrada
-    e chama a função responsável por gerar os crachás.
+    e chama a função responsável por gerar os crachás e a outra função para gerar os pdf.
     """
 
     # Diretório base do script atual
