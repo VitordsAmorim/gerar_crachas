@@ -18,11 +18,10 @@ def gerar_crachas(dados_csv_path: str, modelo_padrao_path: str) -> None:
     # Lê os dados do CSV
     df = pd.read_csv(dados_csv_path)
 
-    print("Colunas encontradas no CSV:", df.columns.tolist())  # Debug
+    # print("Colunas encontradas no CSV:", df.columns.tolist())  # Debug
 
     # Diretório de saída dos crachás
     output_dir = "outputs/crachas_gerados"
-    limpar_diretorio(output_dir)
 
     # Caminho da fonte
     base_dir = os.path.dirname(__file__)
@@ -78,19 +77,3 @@ def gerar_crachas(dados_csv_path: str, modelo_padrao_path: str) -> None:
         img.save(caminho_arquivo)
 
     print("✅ Crachás gerados com sucesso.")
-
-def limpar_diretorio(diretorio):
-    """
-    Apaga o diretório se ele existir e o recria vazio.
-    Esta é a forma mais comum de "limpar" um diretório.
-    """
-    try:
-        if os.path.exists(diretorio):
-            shutil.rmtree(diretorio)
-            print(f"Diretório '{diretorio}' e seu conteúdo apagados com sucesso.")
-        os.makedirs(diretorio, exist_ok=True) # Cria o diretório se não existir
-        print(f"Diretório '{diretorio}' criado/verificado.")
-    except OSError as e:
-        print(f"[ERRO] Falha ao limpar/recriar '{diretorio}': {e}")
-    except Exception as e:
-        print(f"[ERRO GERAL] Ocorreu um erro inesperado: {e}")

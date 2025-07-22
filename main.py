@@ -22,5 +22,11 @@ def main():
     # Geração dos crachás
     gerar_crachas(dados_crachas_path, modelo_cracha_path)
 
+    # Define o diretório onde os crachás PNG foram gerados (entrada).
+    output_dir = "outputs/crachas_gerados"
+    # Define o diretório onde os PDFs de saída serão salvos.
+    pdf_output_dir = "outputs/pdfs"
+    preparar_impressao(output_dir, pdf_output_dir)
+
 if __name__ == "__main__":
     main()
