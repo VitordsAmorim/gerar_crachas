@@ -17,7 +17,7 @@ def main():
     modelo_cracha_path = os.path.join(base_dir, "inputs", "cracha_servos.png")
 
     # Caminho dos dados dos crachás (CSV)
-    dados_crachas_path = os.path.join(base_dir, "data", "Dados_cracha.csv")
+    dados_crachas_path = os.path.join(base_dir, "data", "dados.csv")
 
     # Geração dos crachás
     gerar_crachas(dados_crachas_path, modelo_cracha_path)

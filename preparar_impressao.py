@@ -5,13 +5,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 import os
-# import logging
 
-# # Configuração do sistema de logs
-# logging.basicConfig(
-#     level=logging.INFO,
-#     format="%(asctime)s - %(levelname)s - %(message)s"
-# )
 
 def preparar_impressao(output_dir, pdf_output_dir):
     """

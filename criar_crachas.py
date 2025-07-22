@@ -1,7 +1,6 @@
 # criar_crachas.py
 
 import os
-import shutil
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
