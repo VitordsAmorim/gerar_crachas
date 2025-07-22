@@ -1,32 +1,17 @@
-# main.py
-
 import os
-from criar_crachas import gerar_crachas
-from preparar_impressao import preparar_impressao
+from criar_crachas import gerar_crachas_em_memoria
+from preparar_impressao import preparar_impressao_em_memoria
 
 def main():
-    """
-    Função principal que define os caminhos dos arquivos de entrada
-    e chama a função responsável por gerar os crachás e a outra função para gerar os pdf.
-    """
-
-    # Diretório base do script atual
     base_dir = os.path.dirname(__file__)
+    inputs_dir = os.path.join(base_dir, "inputs")
+    modelo_padrao_path = os.path.join(inputs_dir, "cracha_servos.png")
+    csv_path = os.path.join(base_dir, "data", "dados.csv")
+    fonte_path = os.path.join(base_dir, "fonts", "Almendra", "Almendra-Regular.ttf")
+    pdf_output_dir = os.path.join(base_dir, "outputs", "pdfs")
 
-    # Caminho do modelo de crachá (imagem base)
-    modelo_cracha_path = os.path.join(base_dir, "inputs", "cracha_servos.png")
-
-    # Caminho dos dados dos crachás (CSV)
-    dados_crachas_path = os.path.join(base_dir, "data", "dados.csv")
-
-    # Geração dos crachás
-    gerar_crachas(dados_crachas_path, modelo_cracha_path)
-
-    # Define o diretório onde os crachás PNG foram gerados (entrada).
-    output_dir = "outputs/crachas_gerados"
-    # Define o diretório onde os PDFs de saída serão salvos.
-    pdf_output_dir = "outputs/pdfs"
-    preparar_impressao(output_dir, pdf_output_dir)
+    crachas_memoria = gerar_crachas_em_memoria(csv_path, modelo_padrao_path, inputs_dir, fonte_path)
+    preparar_impressao_em_memoria(crachas_memoria, pdf_output_dir)
 
 if __name__ == "__main__":
     main()
