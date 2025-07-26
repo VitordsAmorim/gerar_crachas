@@ -11,10 +11,15 @@ def gerar_crachas_em_memoria(csv_path, modelo_padrao_path, inputs_dir, fonte_pat
 
     crachas_por_equipe = {}
 
-    for _, row in df.iterrows():
-        apelido = row["APELIDO"]
-        nome_completo = row["NOME COMPLETO"]
-        equipe = row["EQUIPE"]
+    # for _, row in df.iterrows():
+    for row in df.itertuples(index=False):
+        apelido = row.APELIDO
+        nome_completo = row.NOME_COMPLETO
+        equipe = row.EQUIPE   
+
+        # apelido = row["APELIDO"]
+        # nome_completo = row["NOME COMPLETO"]
+        # equipe = row["EQUIPE"] 
 
         imagem_equipe_path = os.path.join(inputs_dir, f"{equipe}.png")
         sub_texto = nome_completo

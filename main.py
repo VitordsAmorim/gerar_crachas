@@ -18,7 +18,6 @@ def main():
 
     end_time = time.time()  # Fim da contagem
     elapsed_time = end_time - start_time
-    print(f"Tempo de execução: 9.35 segundos")
     print(f"Tempo de execução: {elapsed_time:.2f} segundos")
 
 if __name__ == "__main__":
